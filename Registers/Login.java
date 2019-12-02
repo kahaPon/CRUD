@@ -165,6 +165,7 @@ public class Login extends javax.swing.JFrame {
     private void loginButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginButtonMouseClicked
         // TODO add your handling code here:
         ListUser other = new ListUser();
+        Details ds = new Details();
         username = userField.getText();
         password = passwordField.getText();
 //        other.setSize(270,160);
@@ -213,6 +214,13 @@ public class Login extends javax.swing.JFrame {
                 {
                     JOptionPane.showMessageDialog(null, "Invalid password");
                 }
+            }
+            if("admin".equals(username) && pass.equals("admin"))
+            {
+                this.dispose();
+                ds.setVisible(true);
+                ds.user = username;
+                ds.setVisible(false);
             }
             conn.close();
         }
